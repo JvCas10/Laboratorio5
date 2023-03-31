@@ -1,7 +1,6 @@
 #include <LiquidCrystal.h>
 #include <Firmata.h>
-
-LiquidCrystal lcd(5,6,7,8,9,10);
+LiquidCrystal lcd(12,11,5,4,3,2);
 int lastLine = 1;
 
 void stringDataCallback(char *stringData){
@@ -12,6 +11,8 @@ void stringDataCallback(char *stringData){
      lastLine = 1;
      lcd.setCursor(2,1);
    }
+   analogWrite(9,50);
+
    lcd.print(stringData);
 }
 
